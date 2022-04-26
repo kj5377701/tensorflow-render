@@ -29,7 +29,16 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Result = ${response["result"]}`;
+      if (${response["result"]} === 0) {
+        el("result-label").innerHTML = `Result = 公車`;
+      } else if (${response["result"]} === 1) {
+        el("result-label").innerHTML = `Result = Van`;
+      } else if (${response["result"]} === 2) {
+        el("result-label").innerHTML = `Result = 休旅車`;
+      } else if (${response["result"]} === 3) {
+        el("result-label").innerHTML = `Result = 皮卡`;
+      } else if (${response["result"]} === 4) {
+        el("result-label").innerHTML = `Result = 跑車`;
     }
     el("analyze-button").innerHTML = "Analyze";
   };
