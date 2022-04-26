@@ -39,6 +39,7 @@ function analyze() {
         el("result-label").innerHTML = `Result = 皮卡`;
       } else if (${response["result"]} === 4) {
         el("result-label").innerHTML = `Result = 跑車`;
+      }
     }
     el("analyze-button").innerHTML = "Analyze";
   };
